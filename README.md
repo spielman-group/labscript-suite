@@ -18,6 +18,8 @@ The _labscript suite_ is a powerful and extensible framework for experiment [com
 
 This is a metapackage for the _labscript suite_. Formerly the _labscript suite_ installer repository, prior to the packages being installable via [PyPI](https://pypi.org/user/labscript-suite) and [Anaconda Cloud](https://anaconda.org/labscript-suite).
 
+This repository is the Spielman group's fork. Its version of the suite is installed from source, as described in [Installing the Spielman group's version](#installing-the-spielman-groups-version).
+
 
 #### Features:
 - Flexible and automated oversight of heterogeneous hardware.
@@ -33,6 +35,7 @@ This is a metapackage for the _labscript suite_. Formerly the _labscript suite_ 
 
 ## Table of contents
 
+- [Installing the Spielman group's version](#installing-the-spielman-groups-version)
 - [Installing the _labscript suite_](#installing-the-labscript-suite)
 - [Recent changes to the _labscript suite_](#recent-changes-to-the-labscript-suite)
   - [Profile directories](#profile-directories)
@@ -45,6 +48,96 @@ This is a metapackage for the _labscript suite_. Formerly the _labscript suite_ 
   - [Issue tracking](#issue-tracking)
   - [Request for developers](#request-for-developers)
 - [Citing the _labscript suite_](#citing-the-labscript-suite)
+
+## Installing the Spielman group's version
+
+Each package is cloned from [spielman-group](https://github.com/spielman-group) and installed in editable mode into one conda environment. Every package is cloned on its `Development` branch, except `zprocess` and `desktop-app`, which have none and use `Production`. The commands work in a macOS or Linux terminal and in the Windows Anaconda Prompt.
+
+The suite runs on PyQt6 only. conda's `pyqt` package is Qt5, so never install it into this environment.
+
+Create the environment, and a folder to hold the repositories:
+
+```shell
+conda create -n labscript python=3.14
+conda activate labscript
+conda install -c conda-forge pyqt6 lmfit
+
+mkdir labscript-suite
+cd labscript-suite
+```
+
+Clone each package. The `upstream` remote supplies the release tags from which each package reports its version:
+
+```shell
+git clone -b Development https://github.com/spielman-group/blacs
+cd blacs
+git remote add upstream https://github.com/labscript-suite/blacs.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/labscript
+cd labscript
+git remote add upstream https://github.com/labscript-suite/labscript.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/labscript-devices
+cd labscript-devices
+git remote add upstream https://github.com/labscript-suite/labscript-devices.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/labscript-utils
+cd labscript-utils
+git remote add upstream https://github.com/labscript-suite/labscript-utils.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/runmanager
+cd runmanager
+git remote add upstream https://github.com/labscript-suite/runmanager.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/runviewer
+cd runviewer
+git remote add upstream https://github.com/labscript-suite/runviewer.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/lyse
+cd lyse
+git remote add upstream https://github.com/labscript-suite/lyse.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Production https://github.com/spielman-group/zprocess
+cd zprocess
+git remote add upstream https://github.com/chrisjbillington/zprocess.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Production https://github.com/spielman-group/desktop-app
+cd desktop-app
+git remote add upstream https://github.com/chrisjbillington/desktop-app.git
+git fetch upstream --tags
+cd ..
+
+git clone -b Development https://github.com/spielman-group/labscript-optimization
+```
+
+Install the packages, and the application shortcuts:
+
+```shell
+pip install -e blacs -e labscript -e labscript-devices -e labscript-utils -e lyse -e runmanager -e runviewer -e zprocess -e desktop-app -e labscript-optimization
+conda clean --all -y
+labscript-profile-create
+desktop-app install blacs lyse runmanager runviewer
+```
+
+Run `labscript-profile-create` only on a computer where the _labscript suite_ has never been installed. To update, run `git pull` in each repository.
+
+`lyse/examples` holds example analysis routines, both as classic scripts and as `.lyse` routine folders, and `labscript-optimization/examples` holds a demonstration optimization routine.
 
 ## Installing the _labscript suite_
 
