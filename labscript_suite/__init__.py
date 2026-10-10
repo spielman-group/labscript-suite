@@ -1,1 +1,3 @@
-from .__version__ import __version__
+from labscript_utils.versions import package_version
+
+__version__ = package_version(__package__)
