@@ -191,9 +191,9 @@ As of labscript-utils 2.16.0, **encryted interprocess communication will be the 
 
 2. Specify the path of the resulting `shared_secret` in your labconfig. For example:
 
-    ```ini
+    ```toml
     [security]
-    shared_secret = %(labscript_suite)s/labconfig/zpsecret-09f6dfa0.key
+    shared_secret = '%(labscript_suite)s/labconfig/zpsecret-09f6dfa0.key'
     ```
 
 3. Copy the same pre-shared key to all computers running the *labscript suite* that need to communicate with each other, repeating step 2 for each of them.
@@ -202,9 +202,9 @@ Treat this file like a password; it allows anyone on the same network access to 
 
 If you are on a trusted network and don't want to use secure communication, you may instead set:
 
-```ini
+```toml
 [security]
-allow_insecure = True
+allow_insecure = true
 ```
 
 *Notes*:
