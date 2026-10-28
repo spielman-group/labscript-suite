@@ -15,10 +15,10 @@ you can create a new environment.
 Install build dependencies
 --------------------------
 
-If you have an existing, functioning environment for using the **labscript-suite**, you can configure it to build docs by simply installing the docs dependencies found in the `setup.cfg` file of each repository. 
-For a functioning **labscript** environment, the only additional dependencies should be `sphinx`, `sphinx-rtd-theme`, `recommonmark`, and `m2r`.
+If you have an existing, functioning environment for using the **labscript-suite**, you can configure it to build docs by simply installing the `docs` extra in the `pyproject.toml` file of each repository, e.g. ``pip install -e labscript-suite[docs]``.
+For a functioning **labscript** environment, the only additional dependencies should be `sphinx`, `sphinx-rtd-theme`, `myst_parser`, and, for this repository, `sphinxcontrib-bibtex`.
 
-The versions pinned in the `setup.cfg` file will be the versions of these packages that are used by Read the Docs when building the documentation.
+The versions pinned in the `pyproject.toml` file will be the versions of these packages that are used by Read the Docs when building the documentation.
 In order to get an accurate reproduction of what the online docs look like, you should ensure the versions you install match the pins.
 
 Once these dependencies are installed in your **labscript** environment, you are ready to build the docs.
