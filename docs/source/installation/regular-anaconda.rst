@@ -1,6 +1,8 @@
 Regular installation (Anaconda Cloud)
 =====================================
 
+We recommend a :doc:`regular installation from PyPI <regular-pypi>` instead; read the conda caveats in :doc:`index` first.
+
 In this example, we will use an existing conda environment named `labscript`.
 Skip the first line/step if continuing on from the instructions to :ref:`set up this environment <installation/setting-up-an-environment:Anaconda Python>`.
 
@@ -11,8 +13,10 @@ Quick start
 .. code-block:: console
 
     (base) C:\> conda activate labscript
-    (base) C:\> conda config --env --append channels labscript-suite
-    (labscript) C:\> conda install labscript-suite "pyqt<6"
+    (labscript) C:\> conda config --env --add channels conda-forge
+    (labscript) C:\> conda config --env --add channels labscript-suite
+    (labscript) C:\> conda config --env --set channel_priority strict
+    (labscript) C:\> conda install labscript-suite pyqt6
     (labscript) C:\> labscript-profile-create [-n my_apparatus_name] [-c]
     (labscript) C:\> desktop-app install blacs lyse runmanager runviewer
 
@@ -26,23 +30,34 @@ Detailed instructions
 
     (base) C:\> conda activate labscript
 
-2. Add the `labscript-suite` channel on `Anaconda Cloud <https://anaconda.org/labscript-suite>`_ to the current conda environment:
+2. Add the conda-forge channel and then the `labscript-suite` channel on `Anaconda Cloud <https://anaconda.org/labscript-suite>`_ to the current conda environment, and set strict channel priority:
 
   .. code-block:: console
 
+    (labscript) C:\> conda config --env --add channels conda-forge
     (labscript) C:\> conda config --env --add channels labscript-suite
+    (labscript) C:\> conda config --env --set channel_priority strict
 
-3. Install the meta-package (`labscript-suite`) and bindings to the GUI toolkit (`pyqt`) from Anaconda Cloud.
+  Conda then installs the *labscript suite* packages from the `labscript-suite` channel and every other package from conda-forge.
+  On Windows, the `pyzmq` package of Anaconda's default channels is built without CurveZMQ support, which the *labscript suite* uses to encrypt and authenticate communication between its programs; with that package, `labscript-profile-create` fails with the error ``CurveNotSupported``.
+  conda-forge also has an older `desktop-app` package than the `labscript-suite` channel, so the `labscript-suite` channel must be added last, which gives it the highest priority.
+  A conda installation that uses only conda-forge, such as `Miniforge <https://conda-forge.org/download/>`_, needs the same three commands.
+
+3. Install the meta-package (`labscript-suite`) and PyQt6 (`pyqt6`), the Python bindings for the Qt GUI toolkit.
    This will install blacs, labscript, labscript-devices, labscript-utils, lyse, runmanager, runviewer, and all dependencies:
 
   .. code-block:: console
 
-    (labscript) C:\> conda install labscript-suite "pyqt<6"
+    (labscript) C:\> conda install labscript-suite pyqt6
+
+  The *labscript suite* runs on PyQt6 only.
+  Do not install the conda-forge package `pyqt`, which is PyQt5: the applications would use it in preference to PyQt6.
 
 
 4. Create (or populate) a profile directory in your home directory (the location of user data; see :doc:`/reference/changes`).
    Optional arguments allow for minimal control of default installation parameters to allow for all components to load.
-   `-n/--appparatus-name` allows for setting a custom apparatus name for the experiment.
+   `-n/--apparatus_name` allows for setting a custom apparatus name for the experiment.
+   The apparatus name must be a valid Python identifier (letters, digits and underscores, not starting with a digit), because it becomes the name of an importable package under `labscriptlib`.
    `-c/--compile` compiles the example connection table (with dummy devices) so BLACS will launch.
    Using these arguments makes :doc:`initial configuration </setup/configuration>` of the suite much simpler.
 
@@ -65,7 +80,7 @@ Detailed instructions
 
 .. note::
 
-   Conda environments named anything other than `base` will be included in the name of the shortcut, e.g. 'runmanager – the labscript suite (py38)' for a conda environment named `py38`.
+   Conda environments named anything other than `base` will be included in the name of the shortcut, e.g. 'runmanager – the labscript suite (labscript)' for a conda environment named `labscript`.
 
 Alternatively, you can launch the applications from the Anaconda Prompt in the , e.g.
 
@@ -103,7 +118,7 @@ To upgrade to a pre-release version, you can use the test label:
 
 .. code-block:: console
 
-    (labscript) C:\> conda upadte -c labscript-suite/label/test runmanager
+    (labscript) C:\> conda update -c labscript-suite/label/test runmanager
 
 
 If updating multiple components, use a single |conda-update|_ command to assist dependency resolution:
