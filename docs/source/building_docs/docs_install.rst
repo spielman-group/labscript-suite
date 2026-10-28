@@ -31,7 +31,7 @@ You clone a conda enviroment using
 
 .. code-block:: bash
 
-	conda create -n labscript-sphinx -c labscript
+	conda create -n labscript-sphinx --clone labscript
 
 Here we clone an existing `labscript` conda environment into a new environment `labscript-sphinx`.
 This new enviroment will be an exact duplicate of the original at the time of cloning.
