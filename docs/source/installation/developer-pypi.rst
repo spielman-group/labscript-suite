@@ -42,13 +42,13 @@ Quick start with pip
 .. code-block:: console
 
     C:\Users\wkheisenberg\labscript-suite> .venv\Scripts\activate
-    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install \
-            --src . -e git+https://github.com/wkheisenberg/blacs#egg=blacs \
-            --src . -e git+https://github.com/wkheisenberg/labscript#egg=labscript \
-            --src . -e git+https://github.com/wkheisenberg/labscript-devices#egg=labscript-devices \
-            --src . -e git+https://github.com/wkheisenberg/labscript-utils#egg=labscript-utils \
-            --src . -e git+https://github.com/wkheisenberg/runmanager#egg=runmanager \
-            --src . -e git+https://github.com/wkheisenberg/runviewer#egg=runviewer \
+    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install ^
+            --src . -e git+https://github.com/wkheisenberg/blacs#egg=blacs ^
+            --src . -e git+https://github.com/wkheisenberg/labscript#egg=labscript ^
+            --src . -e git+https://github.com/wkheisenberg/labscript-devices#egg=labscript-devices ^
+            --src . -e git+https://github.com/wkheisenberg/labscript-utils#egg=labscript-utils ^
+            --src . -e git+https://github.com/wkheisenberg/runmanager#egg=runmanager ^
+            --src . -e git+https://github.com/wkheisenberg/runviewer#egg=runviewer ^
             --src . -e git+https://github.com/wkheisenberg/lyse#egg=lyse
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt6
     (.venv) C:\Users\wkheisenberg\labscript-suite> labscript-profile-create [-n my_apparatus_name] [-c]
@@ -104,7 +104,7 @@ The following is a detailed explanation of the steps provided in the Quick start
 
    .. code-block:: console
 
-        C:\Users\wkheisenberg\labscript-suite> pip install -e blacs -e labscript \ 
+        C:\Users\wkheisenberg\labscript-suite> pip install -e blacs -e labscript ^
             -e labscript-devices -e labscript-utils -e lyse -e runmanager -e runviewer
 
 

@@ -42,10 +42,10 @@ Quick start
     (labscript) > conda config --env --add channels labscript-suite
     (labscript) > conda config --env --set channel_priority strict
     (labscript) > conda install setuptools-conda pyqt6 pip desktop-app git
-    (labscript) > setuptools-conda install-requirements ^ 
+    (labscript) > setuptools-conda install-requirements `
              labscript runmanager blacs lyse runviewer labscript-devices labscript-utils
-    (labscript) > pip install --no-build-isolation --no-deps ^
-             -e labscript -e runmanager -e blacs -e lyse ^
+    (labscript) > pip install --no-build-isolation --no-deps `
+             -e labscript -e runmanager -e blacs -e lyse `
              -e runviewer -e labscript-devices -e labscript-utils
     (labscript) > labscript-profile-create [-n my_apparatus_name] [-c]
     (labscript) > desktop-app install blacs lyse runmanager runviewer
@@ -94,11 +94,11 @@ The following is a detailed explanation of the steps provided in the Quick start
 
    .. code-block:: console
 
-      C:\Users\wkheisenberg\labscript-suite> pip install --no-build-isolation --no-deps ^
+      C:\Users\wkheisenberg\labscript-suite> pip install --no-build-isolation --no-deps `
       -e labscript -e runmanager -e blacs -e lyse -e runviewer -e labscript-devices -e labscript-utils
 
    .. note::
-        On Linux / macOS the line continuation character is ``\`` rather than `^`.
+        On Linux / macOS the line continuation character is ``\`` rather than PowerShell's backtick.
 
 #. For each repository, set the upstream remote to the base labscript-suite repository:
 
