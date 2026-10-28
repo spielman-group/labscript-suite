@@ -87,7 +87,7 @@ You can learn more about this branching model at:
 
 As our former development, installation, and upgrading practices involved Mercurial revision-control, some of you may not be familiar with Git. While you no longer need to use _any_ revision control system to use the _labscript suite_, those of you wanting to contribute to development who aren't acquainted with Git may benefit from these resources:
 
-* NumPy: [Getting started with Git development](https://numpy.org/doc/stable/dev/gitwash/development_setup.html)
+* NumPy: [Contributing to NumPy](https://numpy.org/doc/stable/dev/index.html)
 * [GitHub Guides](https://guides.github.com/): Very cogent information for beginners. We recommend starting with:
     * [Hello World](https://guides.github.com/activities/hello-world/)
     * [Git Handbook](https://guides.github.com/introduction/git-handbook/)

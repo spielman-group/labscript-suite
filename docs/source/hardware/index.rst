@@ -17,7 +17,7 @@ Hardware on this list do not constitute an endorsement.
   - Pre-generated devices include:
     
     -  `cDAQ-9184 <https://www.ni.com/en-us/support/model.cdaq-9184.html>`__ CompactDAQ Chassis
-    -  `PCI 6251 <https://www.ni.com/en-au/support/model.pci-6251.html>`__ Multifunction I/O Device
+    -  PCI 6251 Multifunction I/O Device
     -  `PCI 6533/6534 <http://www.ni.com/pdf/manuals/371464d.pdf>`__ High-Speed Digital Pattern I/O
     -  `PCI-6713 <https://www.ni.com/en-au/support/model.pci-6713.html>`__ Analog Output Device
     -  `PCI-6733 <https://www.ni.com/en-au/support/model.pci-6733.html>`__ Analog Output Device
@@ -32,11 +32,10 @@ Hardware on this list do not constitute an endorsement.
     -  `USB-6229 <https://www.ni.com/en-my/support/model.usb-6229.html>`__ Multifunction I/O Device
     -  `USB-6343 <https://www.ni.com/en-us/support/model.usb-6343.html>`__ Multifunction I/O Device
 
-- `Quicksyn FSW-0010 <http://ni-microwavecomponents.com/quicksyn-full>`__ Microwave Synthesizer (formerly PhaseMatrix)
--  `NovaTech DDS9m <http://www.novatechsales.com/PDF_files/dds9mds_lr.pdf>`__ 170MHz Four Channel Direct Digital Synthesized Signal Generator
-   (see `blog post <https://labscriptsuite.org/blog/tag/novatech-dds9m/>`__)
+- Quicksyn FSW-0010 Microwave Synthesizer (formerly PhaseMatrix)
+-  `NovaTech DDS9m <https://www.novatechsales.com/DDS9m.html>`__ 170MHz Four Channel Direct Digital Synthesized Signal Generator
 -  `OpalKelly XEM3001 <https://opalkelly.com/products/xem3001/>`__ FPGA Boards used by the Cicero control system
--  `PineBlaster <https://labscriptsuite.org/hardware/pineblaster/>`__ Open-source Digital Pattern Generator
+-  :doc:`PineBlaster <pineblaster>` Open-source Digital Pattern Generator
 -  `SpinCore <https://www.spincore.com/products/#pulsegeneration>`__ Programmable Pulse Generators and Direct Digital Synthesis
 
     -  `PulseBlasterDDS-II-300-AWG <http://www.spincore.com/products/PulseBlasterDDS-II-300/>`__
@@ -45,16 +44,16 @@ Hardware on this list do not constitute an endorsement.
     -  `PulseBlaster <https://www.spincore.com/products/PulseBlaster/>`__ e.g. SP2 Model: PB24-100-32k
     -  `PulseBlasterUSB <https://www.spincore.com/products/PulseBlasterUSB/>`__
 
--  `PineBlaster <http://labscriptsuite.org/hardware/pineblaster>`_ Open-source Digital Pattern Generator
+-  :doc:`PineBlaster <pineblaster>` Open-source Digital Pattern Generator
 -  `PrawnBlaster <https://github.com/labscript-suite/prawnblaster/>`_ Open-source psuedoclock generator based on the $4 Raspberry Pi Pico
 -  `Tektronix oscilloscopes <https://www.tek.com/oscilloscope>`__
 -  `Zaber <https://www.zaber.com/>`__ Motion Controllers, e.g. linear translation stages
--  `FLIR <https://www.flir.com/>`__ cameras using the free `Spinnaker SDK <https://www.flir.com.au/products/spinnaker-sdk/>`__
+-  `FLIR <https://www.flir.com/>`__ cameras using the free `Spinnaker SDK <https://www.teledynevisionsolutions.com/products/spinnaker-sdk/>`__
 -  Andor SDK2 Cameras
 -  Basler pypylon cameras
 -  Any camera compatible with National Instruments `GigE Vision <https://en.wikipedia.org/wiki/GigE_Vision>`__
    
-   - Includes most cameras compliant with the GigE Vision interface standard, such as `Allied Vision <https://www.alliedvision.com/en/products/cameras.html>`__ cameras
+   - Includes most cameras compliant with the GigE Vision interface standard, such as `Allied Vision <https://www.alliedvision.com/en/products/>`__ cameras
 
 .. note::
 
