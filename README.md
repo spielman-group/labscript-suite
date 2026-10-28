@@ -51,7 +51,7 @@ This repository is the Spielman group's fork. Its version of the suite is instal
 
 ## Installing the Spielman group's version
 
-Each package is cloned from [spielman-group](https://github.com/spielman-group) and installed in editable mode into one conda environment. Every package is cloned on its `Development` branch, except `zprocess` and `desktop-app`, which have none and use `Production`. The commands work in a macOS or Linux terminal and in the Windows Anaconda Prompt.
+Each package is cloned from [spielman-group](https://github.com/spielman-group) and installed in editable mode into one conda environment. Every package is cloned on its `Development` branch, except `desktop-app`, which has none and uses `Production`. The commands work in a macOS or Linux terminal and in the Windows Anaconda Prompt.
 
 The suite runs on PyQt6 only. conda's `pyqt` package is Qt5, so never install it into this environment.
 
@@ -111,7 +111,7 @@ git remote add upstream https://github.com/labscript-suite/lyse.git
 git fetch upstream --tags
 cd ..
 
-git clone -b Production https://github.com/spielman-group/zprocess
+git clone -b Development https://github.com/spielman-group/zprocess
 cd zprocess
 git remote add upstream https://github.com/chrisjbillington/zprocess.git
 git fetch upstream --tags
