@@ -28,20 +28,20 @@ Quick start
 
 .. code-block:: console
 
-    (base) C:\Users\wkheisenberg> mkdir labscript-suite
-    (base) > cd labscript-suite
-    (base) > git clone https://github.com/wkheisenberg/labscript
-    (base) > git clone https://github.com/wkheisenberg/runmanager
-    (base) > git clone https://github.com/wkheisenberg/blacs
-    (base) > git clone https://github.com/wkheisenberg/lyse
-    (base) > git clone https://github.com/wkheisenberg/runviewer
-    (base) > git clone https://github.com/wkheisenberg/labscript-devices
-    (base) > git clone https://github.com/wkheisenberg/labscript-utils
-    (base) > conda activate labscript
+    (base) C:\Users\wkheisenberg> conda activate labscript
     (labscript) > conda config --env --add channels conda-forge
     (labscript) > conda config --env --add channels labscript-suite
     (labscript) > conda config --env --set channel_priority strict
     (labscript) > conda install setuptools-conda pyqt6 pip desktop-app git
+    (labscript) > mkdir labscript-suite
+    (labscript) > cd labscript-suite
+    (labscript) > git clone https://github.com/wkheisenberg/labscript
+    (labscript) > git clone https://github.com/wkheisenberg/runmanager
+    (labscript) > git clone https://github.com/wkheisenberg/blacs
+    (labscript) > git clone https://github.com/wkheisenberg/lyse
+    (labscript) > git clone https://github.com/wkheisenberg/runviewer
+    (labscript) > git clone https://github.com/wkheisenberg/labscript-devices
+    (labscript) > git clone https://github.com/wkheisenberg/labscript-utils
     (labscript) > setuptools-conda install-requirements `
              labscript runmanager blacs lyse runviewer labscript-devices labscript-utils
     (labscript) > pip install --no-build-isolation --no-deps `
@@ -71,22 +71,22 @@ The following is a detailed explanation of the steps provided in the Quick start
           :align: center
           :alt: Unselect this option to copy version tags too 
 
-#. Manually clone the forked repositories using |GitClone|_.
-
-   .. note::
-        This will set your forked repository(ies) to be the 'origin' remote.
-
 #. Activate the `labscript` environment, add the conda-forge and `labscript-suite` channels to it with strict channel priority (step 2 of :doc:`regular-anaconda` gives the reasons), and install the build tools, the Qt bindings (`pyqt6`) and `git`:
 
    .. code-block:: console
 
-        (base) C:\Users\wkheisenberg\labscript-suite> conda activate labscript
-        (labscript) C:\Users\wkheisenberg\labscript-suite> conda config --env --add channels conda-forge
-        (labscript) C:\Users\wkheisenberg\labscript-suite> conda config --env --add channels labscript-suite
-        (labscript) C:\Users\wkheisenberg\labscript-suite> conda config --env --set channel_priority strict
-        (labscript) C:\Users\wkheisenberg\labscript-suite> conda install setuptools-conda pyqt6 pip desktop-app git
+        (base) C:\Users\wkheisenberg> conda activate labscript
+        (labscript) C:\Users\wkheisenberg> conda config --env --add channels conda-forge
+        (labscript) C:\Users\wkheisenberg> conda config --env --add channels labscript-suite
+        (labscript) C:\Users\wkheisenberg> conda config --env --set channel_priority strict
+        (labscript) C:\Users\wkheisenberg> conda install setuptools-conda pyqt6 pip desktop-app git
 
    `git` is required in the `labscript` environment because `setuptools-conda install-requirements` and the editable `pip install` below read each component's version from its git repository.
+
+#. Make a `labscript-suite` folder, and clone the forked repositories into it using |GitClone|_.
+
+   .. note::
+        This will set your forked repository(ies) to be the 'origin' remote.
 
 #. Use the `setuptools-conda install-requirements` command to introspect the dependencies from the cloned repositories.
 
