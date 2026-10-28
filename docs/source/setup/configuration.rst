@@ -73,7 +73,7 @@ Once the appropriate changes have been made, save the file.
      The default installation will create this file for you, place it in the correct folder, and update the reference in the config file to reflect its automatically generated name.
      In a multi-computer installation, all computers will need access to the same secret key in order to commuicate with encryption.
      Each computer's labconfig file will need to be updated to point to the same key file.
-  * `allow_insecure` can be added to this section and set to `True` to disable secure communications.
+  * `allow_insecure` can be added to this section and set to `true` to disable secure communications.
      This value will need to be the same across all computers in a multi-computer setup.
 
 With these configurations made, you should now be able to run any module of the **labscript-suite**, except BLACS which requires more configuration.
