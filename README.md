@@ -122,14 +122,12 @@ cd desktop-app
 git remote add upstream https://github.com/chrisjbillington/desktop-app.git
 git fetch upstream --tags
 cd ..
-
-git clone -b Development https://github.com/spielman-group/labscript-optimization
 ```
 
 Install the packages, and the application shortcuts:
 
 ```shell
-pip install -e blacs -e labscript -e labscript-devices -e labscript-utils -e lyse -e runmanager -e runviewer -e zprocess -e desktop-app -e labscript-optimization
+pip install -e blacs -e labscript -e labscript-devices -e labscript-utils -e lyse -e runmanager -e runviewer -e zprocess -e desktop-app
 conda clean --all -y
 labscript-profile-create
 desktop-app install blacs lyse runmanager runviewer
@@ -137,7 +135,7 @@ desktop-app install blacs lyse runmanager runviewer
 
 Run `labscript-profile-create` only on a computer where the _labscript suite_ has never been installed. To update, run `git pull` in each repository.
 
-`lyse/examples` holds example analysis routines, both as classic scripts and as `.lyse` routine folders, and `labscript-optimization/examples` holds a demonstration optimization routine.
+`lyse/examples` holds example analysis routines, both as classic scripts and as `.lyse` routine folders.
 
 ## Installing the _labscript suite_
 
