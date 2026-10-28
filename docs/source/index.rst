@@ -142,7 +142,6 @@ Testimonials
    reference/changes
    building_docs/index
    reference/community
-   reference/archive
 
 .. toctree::
    :maxdepth: 2

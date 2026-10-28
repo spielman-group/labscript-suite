@@ -13,7 +13,7 @@ The source code for the PineBlaster is available from our `github repository <ht
 We currently have several versions of code,
 depending on which version of MPIDE you use to compile and flash the ChipKIT MAX32 board.
 The version in the default branch currently only compiles with `MPIDE v0023-20120903 <https://chipkit.s3.amazonaws.com/builds/mpide-0023-windows-20120903.zip>`__.
-There is a version in the `MPIDE_v0150-20150820 <https://bitbucket.org/labscript_suite/pineblaster/src/tip/?at=MPIDE_v0150-20150820>`__ branch of the repository which works with the latest version of MPIDE
+There is a version in the `MPIDE_v0150-20150820 <https://github.com/labscript-suite/pineblaster/tree/MPIDE_v0150-20150820>`__ branch of the repository which works with the latest version of MPIDE
 (of the same name as the branch).
 However, this version has a lower instruction limit of 7450 (compared to 15000 on the earlier version)
 and a slower 4us response time to triggers (compared to 1us on the earlier version).

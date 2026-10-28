@@ -43,7 +43,6 @@ This repository is the Spielman group's fork. Its version of the suite is instal
   - [Application shortcuts](#application-shortcuts)
   - [Source code structure (developer installation)](#source-code-structure-developer-installation)
   - [Versioning (developer installation)](#versioning-developer-installation)
-- [BitBucket archive](#bitbucket-archive)
 - [Contributing to the _labscript suite_](#contributing-to-the-labscript-suite)
   - [Issue tracking](#issue-tracking)
   - [Request for developers](#request-for-developers)
@@ -256,20 +255,6 @@ Existing users who move to a developer (editable) installation, please note the 
 Aside from the maintenance branches documented [here](https://docs.labscriptsuite.org/en/latest/project/contributing_guide/#branching-model-strategy), versions of the labscript suite packages are introspected at run-time using either the [importlib.metadata](https://docs.python.org/3/library/importlib.metadata.html) library (regular installations) or [setuptools_scm](https://github.com/pypa/setuptools_scm) (developer installations). Thus any changes to an editable install will be traceable by local version numbers, e.g. editing the released version of a package with version 2.4.0 will result in 2.4.0dev1+gc28fe94, for example. This will help us diagnose issues users have with their editable installations.
 
 
-## BitBucket archive
-
-In April–May 2020 the _labscript suite_ code base was migrated from BitBucket to GitHub. All commit history and issues was preserved, however some repository metadata (such as pull request discussions) could not be migrated directly. As such, we have created an archived copy of everything that was on BitBucket. This includes:
-
-* Issues (as they appear on BitBucket);
-* Pull requests discussions;
-* Commit comments for every labscript suite repository; and
-* Every public fork (as of 1st February, 2020).
-
-This archive can be found at [bitbucket-archive.labscriptsuite.org](https://bitbucket-archive.labscriptsuite.org/) (this page can take some time to load for the first time). Copies of every public fork of our repositories are at [github.com/labscript-suite-bitbucket-archive](https://github.com/labscript-suite-bitbucket-archive). As this is an archive, we will not be transferring ownership of these repositories back to their original owners. However, should you wish to continue development on one of those repositories you can fork it into your own account through the GitHub web interface. Should you have uncommitted changes (or changes made after 1st February, 2020) that you wish to have archived, please contact us to discuss the best approach to including these. Please note that we are not recommending continuing development in such forks long term, due to the changes in package structure outlined above.
-
-Further information about migrating your own customisations of the labscript suite can be found [here](https://docs.labscriptsuite.org/en/latest/archive/).
-
-
 ## Contributing to the _labscript suite_
 
 We are very grateful for all the contributions users have made in the past decade to make the _labscript suite_ the most widely used open-source experiment control and automation system in quantum science. These include development, suggestions, and feedback, and we look forward to this continuing on GitHub.
@@ -277,7 +262,7 @@ We are very grateful for all the contributions users have made in the past decad
 
 ### Issue tracking
 
-The issue tracking on GitHub is very similar to BitBucket, with the added advantage that you can add inter-repository issue references, e.g. referring to [labscript-suite/runmanager#68](https://github.com/labscript-suite/runmanager/issues/68) in any issue or pull request will link to the corresponding issue. We have imported all issues from the BitBucket repositories into the GitHub repositories. This import is not perfect (as each comment is now posted by Phil Starkey) but the comments have been modified to contain the original author attribution. We have also updated all links to files, pull requests, issues, and commits so that they point to the equivalent GitHub location and/or the archived copy of the data (as discussed above).
+On GitHub you can add inter-repository issue references, e.g. referring to [labscript-suite/runmanager#68](https://github.com/labscript-suite/runmanager/issues/68) in any issue or pull request will link to the corresponding issue.
 
 Please use the issue tracker of the relevant GitHub repository for:
 

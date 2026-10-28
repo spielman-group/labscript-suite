@@ -92,5 +92,5 @@ As our former development, installation, and upgrading practices involved Mercur
     * [Hello World](https://guides.github.com/activities/hello-world/)
     * [Git Handbook](https://guides.github.com/introduction/git-handbook/)
     	_Note:_ You may notice references to 'GitHub Flow' in these guides (and 'Git Flow' elsewhere). These share some aspects of the Release Flow branching-workflow we use, but are distinct.
-* [Atliassian Git Tutorials](https://www.atlassian.com/git/tutorials): Despite the many references to BitBucket (ignore these); there is a wealth of excellent beginner information for using Git at the command line here; and finally
+* [Atliassian Git Tutorials](https://www.atlassian.com/git/tutorials): There is a wealth of excellent beginner information for using Git at the command line here; and finally
 * [Oh Shit, Git!?!](https://ohshitgit.com/) Mistakes happen. This is a good place to start fixing them. ([Censored version](https://dangitgit.com/).)
