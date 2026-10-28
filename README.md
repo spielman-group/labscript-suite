@@ -55,12 +55,14 @@ Each package is cloned from [spielman-group](https://github.com/spielman-group) 
 
 The suite runs on PyQt6 only. conda's `pyqt` package is Qt5, so never install it into this environment.
 
-Create the environment, and a folder to hold the repositories:
+Create the environment from conda-forge, with `git` in it, and a folder to hold the repositories:
 
 ```shell
-conda create -n labscript python=3.14
+conda create -n labscript -c conda-forge --override-channels python=3.14
 conda activate labscript
-conda install -c conda-forge pyqt6 lmfit
+conda config --env --add channels conda-forge
+conda config --env --set channel_priority strict
+conda install pyqt6 lmfit git
 
 mkdir labscript-suite
 cd labscript-suite
