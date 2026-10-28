@@ -1,25 +1,41 @@
 Regular installation (Python Package Index)
 ===========================================
 
-In this example, we will use an existing virtual environment named `.venv` located in `C:\Users\wkheisenberg\labscript-suite`.
-Skip the first two lines/steps if continuing on from the instructions to :ref:`set up this environment <installation/setting-up-an-environment:Regular Python>`.
+In this example, we will use a virtual environment named `.venv` located in `C:\Users\wkheisenberg\labscript-suite`, made with :ref:`uv <installation/setting-up-an-environment:uv>` or with the :ref:`venv module <installation/setting-up-an-environment:Regular Python>`.
 
 
-Quick start
------------
+Quick start with uv
+-------------------
+
+.. code-block:: console
+
+    C:\Users\wkheisenberg\labscript-suite> uv venv --seed --python 3.14
+    C:\Users\wkheisenberg\labscript-suite> .venv\Scripts\activate
+    (.venv) C:\Users\wkheisenberg\labscript-suite> uv pip install labscript-suite PyQt6
+    (.venv) C:\Users\wkheisenberg\labscript-suite> labscript-profile-create [-n my_apparatus_name] [-c]
+    (.venv) C:\Users\wkheisenberg\labscript-suite> desktop-app install blacs lyse runmanager runviewer
+
+Skip the first line if you have already created the virtual environment.
+
+
+Quick start with pip
+--------------------
 
 .. code-block:: console
 
     C:\Users\wkheisenberg\labscript-suite> .venv\Scripts\activate
     (.venv) C:\Users\wkheisenberg\labscript-suite> python -m pip install --upgrade pip setuptools wheel
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install labscript-suite
-    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt5
+    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt6
     (.venv) C:\Users\wkheisenberg\labscript-suite> labscript-profile-create [-n my_apparatus_name] [-c]
     (.venv) C:\Users\wkheisenberg\labscript-suite> desktop-app install blacs lyse runmanager runviewer
 
 
 Detailed instructions
 ---------------------
+
+The steps below use `pip`.
+With uv, skip step 2, and use `uv pip install` wherever a step uses `pip install`.
 
 1. Activate the virtual environment (this step is OS specific, e.g. on Linux it's `source .venv/bin/activate`).
 
@@ -43,16 +59,20 @@ Detailed instructions
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install labscript-suite
 
 
-4. Install PyQt5, the bindings to the GUI toolkit (not installed above for licensing reasons):
+4. Install PyQt6, the Python bindings for the Qt GUI toolkit:
 
   .. code-block:: console
 
-    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt5
+    (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt6
+
+  The *labscript suite* runs on PyQt6 only.
+  Do not install PyQt5 or PySide6 beside it: the applications would use either of them in preference to PyQt6.
 
 
 5. Create (or populate) a profile directory in your home directory (the location of user data; see :doc:`/reference/changes`).
    Optional arguments allow for minimal control of default installation parameters to allow for all components to load.
-   `-n/--appparatus-name` allows for setting a custom apparatus name for the experiment.
+   `-n/--apparatus_name` allows for setting a custom apparatus name for the experiment.
+   The apparatus name must be a valid Python identifier (letters, digits and underscores, not starting with a digit), because it becomes the name of an importable package under `labscriptlib`.
    `-c/--compile` compiles the example connection table (with dummy devices) so BLACS will launch.
    Using these arguments makes :doc:`initial configuration </setup/configuration>` of the suite much simpler.
 
@@ -99,18 +119,19 @@ To launch the applications detached from the console, suffix the application nam
 Updating a regular installation
 -------------------------------
 
-Individual components of the labscript suite can be updated using the `--upgrade` (`-U`) flag of `pip`. For example:
+Individual components of the labscript suite can be updated using the `--upgrade` (`-U`) flag of `pip` or `uv pip`. For example:
 
 .. code-block:: console
 
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install -U runmanager
 
 
-To upgrade to a pre-release version, you can use the `--pre` (pre-relase) flag:
+To upgrade to a pre-release version, you can use the `--pre` (pre-release) flag, or `--prerelease allow` with `uv pip`:
 
 .. code-block:: console
 
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install -U --pre runmanager
+    (.venv) C:\Users\wkheisenberg\labscript-suite> uv pip install -U --prerelease allow runmanager
 
 
 If updating multiple components, use a single `pip install` command to assist dependency resolution:
