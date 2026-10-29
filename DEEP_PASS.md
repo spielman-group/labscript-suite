@@ -16,8 +16,8 @@ tests.
 - Python 3.13 is the floor (Ian), in `requires-python`, the install docs and
   the Read the Docs build, which installs the metapackage.
 - Upstream's `[programs]` section of the configuration page (`4d70063`) is
-  adopted, reworded to the fork's defaults: labscript-utils keeps its own, and
-  an empty key gives a warning rather than the OS default program.
+  adopted unchanged, since labscript-utils takes upstream's defaults
+  (`4db2e74`).
 - The metapackage lists no qtutils or zprocess, so their new floors are
   labscript-utils' to set.
 - Upstream's unmerged `docs-corrections` branch drops the docs' `.. todo::`

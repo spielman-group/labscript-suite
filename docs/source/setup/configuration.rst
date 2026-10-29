@@ -70,10 +70,11 @@ Once the appropriate changes have been made, save the file.
 * `[programs]`
 
   * `text_editor` is the program in which runmanager, lyse and BLACS open experiment scripts, analysis routines and the connection table, and `hdf5_viewer` is the program in which lyse opens shot files.
-     `text_editor_arguments` and `hdf5_viewer_arguments` are their arguments: each `{file}` in them is replaced by the file's path, and with no `{file}` the path comes before them.
-     New labconfig files name Sublime Text 3 and `HDFView <https://github.com/HDFGroup/hdfview/releases>`_ 3.1.0 at their default install paths on Windows, `gedit` and `hdfview` on Linux, and TextEdit and `hdfview` on macOS.
-     Set the keys to the programs you use.
-     If a key is empty, the application says so instead of opening the file.
+     On Windows, the default labconfig file gives the paths of `VS Code <https://code.visualstudio.com/>`_ and `HDFView <https://github.com/HDFGroup/hdfview/releases>`_ that their installers use.
+     Install VS Code with its user installer, and HDFView with the `HDFView-<version>-Windows.msi` file of the latest HDFView release on GitHub, or set the keys to the paths of other programs.
+     The HDFView installer also makes HDFView the default program for `.h5` files.
+     If a key is empty, files are opened in the operating system's default program for the file type.
+     On Linux and macOS, both keys are empty by default. The HDFView releases also contain packages for Linux and macOS.
 
 * `[security]`
 
