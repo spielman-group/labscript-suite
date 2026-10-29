@@ -70,6 +70,11 @@ Operating-system menu shortcuts, correct taskbar behaviour, and environment acti
 The `experiment_name` item has been renamed to `apparatus_name` in the labconfig (`.toml`) file, to better reflect the distinciton between the infrasturcture that experiment shots are executed on. The old keyword can still be used for this item, but a [warning](https://docs.python.org/3/library/exceptions.html#FutureWarning) will be issued to remind you to update your labconfig.
 
 
+## Experiment scripts
+
+`from labscript import *` no longer re-exports pylab: scripts that use numpy import it themselves.
+
+
 ## Source code structure (developer installation)
 
 Existing users who move to a developer (editable) installation, please note the following structural changes to the _labscript suite_ source code:
