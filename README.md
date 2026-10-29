@@ -31,7 +31,7 @@ This repository is the Spielman group's fork. Its version of the suite is instal
 - Dynamic visualisation of experiment composition and results.
 - Remote operation: different modules can run on physically separate hosts / single modules can be run on multiple hosts (including hardware supervisor, [blacs](https://github.com/labscript-suite/blacs)).
 - Auto-generating user-interfaces.
-- High-level scripting: user-interface interaction can be programatically synthesised.
+- High-level scripting: user-interface interaction can be programmatically synthesised.
 
 ## Table of contents
 
@@ -186,7 +186,7 @@ _Note:_ As of [labscript-suite/labscript-utils#37](https://github.com/labscript-
 
 Interprocess communication between components of the *labscript suite* is based on the [ZeroMQ](https://zeromq.org) (ZMQ) messaging protocol. We have supported secure interprocess communication via encrypted ZMQ messaging since February 2019 (labscript-utils 2.11.0).
 
-As of labscript-utils 2.16.0, **encryted interprocess communication will be the default**. If you haven't already, this means you'll need to create a new shared secret (or [pre-shared key](https://en.wikipedia.org/wiki/Pre-shared_key)) as follows:
+As of labscript-utils 2.16.0, **encrypted interprocess communication will be the default**. If you haven't already, this means you'll need to create a new shared secret (or [pre-shared key](https://en.wikipedia.org/wiki/Pre-shared_key)) as follows:
 
 1. Run `python -m zprocess.makesecret` from the labconfig directory.
 
@@ -252,7 +252,8 @@ Existing users who move to a developer (editable) installation, please note the 
 
 ### Versioning (developer installation)
 
-Aside from the maintenance branches documented [here](https://docs.labscriptsuite.org/en/latest/project/contributing_guide/#branching-model-strategy), versions of the labscript suite packages are introspected at run-time using either the [importlib.metadata](https://docs.python.org/3/library/importlib.metadata.html) library (regular installations) or [setuptools_scm](https://github.com/pypa/setuptools_scm) (developer installations). Thus any changes to an editable install will be traceable by local version numbers, e.g. editing the released version of a package with version 2.4.0 will result in 2.4.0dev1+gc28fe94, for example. This will help us diagnose issues users have with their editable installations.
+Aside from the maintenance branches documented [here](https://docs.labscriptsuite.org/en/latest/project/contributing/#branching-model-strategy), versions of the labscript suite packages are introspected at run-time using either the [importlib.metadata](https://docs.python.org/3/library/importlib.metadata.html) library (regular installations) or [setuptools_scm](https://github.com/pypa/setuptools_scm) (developer installations). Thus any changes to an editable install will be traceable by local version numbers, e.g. editing the released version of a package with version 2.4.0 will result in 2.4.0dev1+gc28fe94, for example. This will help us diagnose issues users have with their editable installations.
+
 
 
 ## Contributing to the _labscript suite_
@@ -291,7 +292,7 @@ If you use the _labscript suite_ to control your experiment or perform analysis,
 
   ```bibtex
     @phdthesis{starkey_phd_2019,
-      title = {State-dependent forces in cold quantum gases},
+      title = {A software framework for control and automation of precisely timed experiments},
       author = {Starkey, P. T.},
       year = {2019},
       url = {https://doi.org/10.26180/5d1db8ffe29ef},
