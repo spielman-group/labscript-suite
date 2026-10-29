@@ -29,7 +29,7 @@ On Linux and macOS, activate it with `source .venv/bin/activate`.
 Regular Python
 --------------
 
-If you already have a Python installation (3.11 or later) and do not use uv, create the virtual environment with the `venv module <https://docs.python.org/3/library/venv.html>`_, part of the Python Standard Library.
+If you already have a Python installation (3.13 or later) and do not use uv, create the virtual environment with the `venv module <https://docs.python.org/3/library/venv.html>`_, part of the Python Standard Library.
 Here's an example (on Windows):
 
 .. _Python Quickstart:
