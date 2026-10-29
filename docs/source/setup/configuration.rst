@@ -67,6 +67,14 @@ Once the appropriate changes have been made, save the file.
      Rules to set it are the same as `zlock`.
      It can be the same computer as the zlock server.
 
+* `[programs]`
+
+  * `text_editor` is the program in which runmanager, lyse and BLACS open experiment scripts, analysis routines and the connection table, and `hdf5_viewer` is the program in which lyse opens shot files.
+     `text_editor_arguments` and `hdf5_viewer_arguments` are their arguments: each `{file}` in them is replaced by the file's path, and with no `{file}` the path comes before them.
+     New labconfig files name Sublime Text 3 and `HDFView <https://github.com/HDFGroup/hdfview/releases>`_ 3.1.0 at their default install paths on Windows, `gedit` and `hdfview` on Linux, and TextEdit and `hdfview` on macOS.
+     Set the keys to the programs you use.
+     If a key is empty, the application says so instead of opening the file.
+
 * `[security]`
 
   * `shared_secret` should be set to the full path to the zprocess secret key for encryption.
