@@ -11,6 +11,18 @@ tests.
 
 - The pyproject dependency floors wait for campaign item 15.
 
+## Upstream stage
+
+- Python 3.11 is the floor (Ian), in `requires-python`; the install docs
+  already said so.
+- Upstream's `[programs]` section of the configuration page (`4d70063`) is
+  adopted, reworded to the fork's defaults: labscript-utils keeps its own, and
+  an empty key gives a warning rather than the OS default program.
+- The metapackage lists no qtutils or zprocess, so their new floors are
+  labscript-utils' to set.
+- Upstream's unmerged `docs-corrections` branch drops the docs' `.. todo::`
+  notes; it is reviewed when it reaches upstream `master`.
+
 ## Decisions
 
 - Ian's add-ons are not part of the suite and are not named here.
