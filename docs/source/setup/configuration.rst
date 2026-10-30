@@ -19,8 +19,8 @@ Before running any **labscript-suite** components after a fresh installation, yo
 This file is found in the user space `labscript-suite/labconfig` directory created by the `labscript-profile-create` command of the installation process.
 This directory is, by default, located at the top level of the user's directory.
 The labconfig file is named after the computer's host name, which on macOS is the output of `scutil --get LocalHostName`.
-So if your system hostname is `heisenberg`, the labconfig file will be named `heisenberg.ini`.
-This directory will also contain a copy of the default labconfig file as `example.ini`.
+So if your system hostname is `heisenberg`, the labconfig file will be named `heisenberg.toml`.
+This directory will also contain a copy of the default labconfig file as `example.toml`.
 Only changes made to the labconfig file named after your system will have any effect.
 
 The :doc:`labconfig page of labscript-utils <labscript-utils:labconfig>` shows the default labconfig file and describes every key.
@@ -32,13 +32,13 @@ Many of the options in this file do not need to be changed, but a few things sho
 Once the appropriate changes have been made, save the file.
 The keys are described in the :ref:`list of keys <labscript-utils:labconfig:keys>` of the labconfig page.
 
-* `[DEFAULT]` `apparatus_name`: the name of the experiment.
+* `[default]` `apparatus_name`: the name of the experiment.
   `labscript-profile-create` sets it to the value of its `-n/--apparatus_name` argument, or to `example_apparatus` without that argument.
   The paths of the experiment scripts, analysis routines and shot files contain it.
   `labscript-profile-create` creates the `userlib/labscriptlib/<apparatus_name>` and `userlib/analysislib/<apparatus_name>` directories for the name that it is given.
   To change the apparatus name later, create these directories for the new name, with an `__init__.py` file in each, and restart the **labscript-suite** components.
 
-* `[DEFAULT]` `shared_drive`: the directory that holds the shot files.
+* `[default]` `shared_drive`: the directory that holds the shot files.
   In an installation that spans several computers, it is a network location that all of the computers can access.
 
 * `[servers]` `zlock`: in an installation that spans several computers, the host name of the computer that runs the zlock server.
