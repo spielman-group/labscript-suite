@@ -50,10 +50,11 @@ Detailed instructions
 
     (labscript) C:\> conda install labscript-suite pyqt6
 
-  The *labscript suite* also works with the PySide6 and PyQt5 bindings, which are the conda-forge packages `pyside6` and `pyqt`.
-  To use one of them, install it and set the key `qt_binding` in the `[gui]` section of the :doc:`labconfig file <labscript-utils:labconfig>` to `PySide6` or `PyQt5`.
+  The *labscript suite* also works with the PySide6 binding, which is the conda-forge package `pyside6`.
+  To use it, install it and set the key `qt_binding` in the `[gui]` section of the :doc:`labconfig file <labscript-utils:labconfig>` to `PySide6`.
   The default is `PyQt6`.
-  If the environment variable `QT_ENV` is set to `PyQt5`, `PySide6` or `PyQt6`, it takes precedence over the key.
+  If the environment variable `QT_ENV` is set to `PySide6` or `PyQt6`, it takes precedence over the key.
+  PyQt5 is not supported: do not install the conda-forge package `pyqt`, which is PyQt5.
 
 
 4. Create a profile directory in your home directory (the location of user data; see :doc:`/reference/changes`).

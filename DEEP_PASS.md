@@ -27,8 +27,9 @@ tests.
   configuration page names the TOML labconfig and its `[default]` section
   (`7c75e22`).
 - Upstream's `d6a18b7` (the `[gui] qt_binding` key) is ported as `57c6804`,
-  then `cc38aca` makes PyQt6 the default and PySide6 and PyQt5 the
-  alternatives, as labscript-utils' `edcf752` does (Ian).
+  then `cc38aca` makes PyQt6 the default, as labscript-utils' `edcf752` does
+  (Ian). PySide6 is the one alternative: the fork's code is Qt6 only, so the
+  install docs say PyQt5 is not supported.
 
 ## Decisions
 
