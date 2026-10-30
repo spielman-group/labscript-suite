@@ -26,15 +26,15 @@ tests.
   names PyQt6; the Bitbucket archive section and mention stay out; the
   configuration page names the TOML labconfig and its `[default]` section
   (`7c75e22`).
-- Upstream's `d6a18b7` is not ported: it documents a `[gui] qt_binding`
-  labconfig key, default PySide6, from labscript-utils #165, which the fork's
-  labscript-utils lacks, and it contradicts PyQt6 only. It waits for Ian.
+- Upstream's `d6a18b7` (the `[gui] qt_binding` key) is ported as `57c6804`,
+  then `cc38aca` makes PyQt6 the default and PySide6 and PyQt5 the
+  alternatives, as labscript-utils' `edcf752` does (Ian).
 
 ## Decisions
 
 - Ian's add-ons are not part of the suite and are not named here.
 - Bitbucket is gone and is not referenced.
-- The fork runs on PyQt6 only. Upstream's install docs recommend PySide6; a
-  merge from `master` names PyQt6 instead (`pyqt6` on conda-forge), says it is
-  the only binding, and warns against conda-forge's `pyqt`, which is PyQt5.
+- PyQt6 is the default Qt binding (Ian): where upstream's docs name PySide6
+  as the default or the binding to install, the fork names PyQt6
+  (`pyqt6` on conda-forge).
 - The docs follow upstream as closely as the fork allows (Ian).
