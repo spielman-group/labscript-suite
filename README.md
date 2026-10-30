@@ -52,7 +52,7 @@ This repository is the Spielman group's fork. Its version of the suite is instal
 
 Each package is cloned from [spielman-group](https://github.com/spielman-group) and installed in editable mode into one conda environment. Every package is cloned on its `Development` branch, except `desktop-app`, which has none and uses `Production`. The commands work in a macOS or Linux terminal and in the Windows Anaconda Prompt.
 
-The suite runs on PyQt6 only. conda's `pyqt` package is Qt5, so never install it into this environment.
+The suite runs on PyQt6, the default of the labconfig key `[gui] qt_binding`. conda's `pyqt` package is Qt5 and stops PyQt6 from starting, so never install it into this environment.
 
 Create the environment from conda-forge, with `git` in it, and a folder to hold the repositories:
 
