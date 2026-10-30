@@ -65,8 +65,15 @@ With uv, skip step 2, and use `uv pip install` wherever a step uses `pip install
 
     (.venv) C:\Users\wkheisenberg\labscript-suite> pip install PyQt6
 
-  The *labscript suite* runs on PyQt6 only.
-  Do not install PyQt5 or PySide6 beside it: the applications would use either of them in preference to PyQt6.
+  The *labscript suite* also works with the PyQt6 and PyQt5 bindings (``pip install PyQt6`` or ``pip install PyQt5``).
+  To use one of them, install it and set the key `qt_binding` in the `[gui]` section of the :doc:`labconfig file <labscript-utils:labconfig>` to `PyQt6` or `PyQt5`.
+  The default is `PySide6`.
+  If the environment variable `QT_ENV` is set to `PyQt5`, `PySide6` or `PyQt6`, it takes precedence over the key.
+
+  .. warning::
+
+     PySide6 6.12.0 crashes lyse when an analysis routine adds columns, and on Python 3.11 it crashes each of the applications after some time.
+     If PySide6 6.12.0 is installed, install an earlier version with ``pip install "PySide6<6.12"``.
 
 
 5. Create a profile directory in your home directory (the location of user data; see :doc:`/reference/changes`).
